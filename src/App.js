@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import foodData from './Food_Display_Table.csv'
+import {useEffect} from 'react'
+import Papa from 'papaparse'
 
 function App() {
+  console.log(foodData)
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch(foodData)
+      const reader = response.body.getReader()
+      const result = await reader.read()
+      const decoder = new TextDecoder('utf-8')
+      const csv = decoder.decode(result.value)
+      const results = Papa.parse(csv, { header: true })
+    }
+    getData()
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>TEST</h1>
     </div>
   );
 }
