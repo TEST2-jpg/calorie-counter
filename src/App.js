@@ -1,23 +1,28 @@
-import foodData from './Food_Display_Table.csv'
-import {useEffect} from 'react'
+import data from './Food_Display_Table.csv'
+import { useEffect, useState } from 'react'
 import Papa from 'papaparse'
+import Search from './components/Search'
+
 
 function App() {
-  console.log(foodData)
+  const [foodData, setFoodData] = useState([])
   useEffect(() => {
     async function getData() {
-      const response = await fetch(foodData)
+      const response = await fetch(data)
       const reader = response.body.getReader()
       const result = await reader.read()
       const decoder = new TextDecoder('utf-8')
       const csv = decoder.decode(result.value)
       const results = Papa.parse(csv, { header: true })
+      setFoodData(results)
     }
     getData()
   }, [])
+  console.log(foodData)
+
   return (
     <div className="App">
-      <h1>TEST</h1>
+      <Search data={foodData.data} />
     </div>
   );
 }
