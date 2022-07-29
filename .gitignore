@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#Data set
+Food_Display_Table.csv
+
 # testing
 /coverage
 
