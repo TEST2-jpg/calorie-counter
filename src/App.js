@@ -18,7 +18,6 @@ function App() {
     }
     getData()
   }, [])
-  console.log(foodData)
 
   return (
     <div className="App">
