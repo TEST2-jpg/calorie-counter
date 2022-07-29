@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/calorie-counter/static/css/main.f79cfb9a.css",
+    "main.js": "/calorie-counter/static/js/main.e33f4447.js",
+    "static/media/Food_Display_Table.csv": "/calorie-counter/static/media/Food_Display_Table.6afffe6fbd63a10d7a1d.csv",
+    "index.html": "/calorie-counter/index.html",
+    "main.f79cfb9a.css.map": "/calorie-counter/static/css/main.f79cfb9a.css.map",
+    "main.e33f4447.js.map": "/calorie-counter/static/js/main.e33f4447.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f79cfb9a.css",
+    "static/js/main.e33f4447.js"
+  ]
+}
