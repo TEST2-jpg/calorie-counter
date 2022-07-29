@@ -32,9 +32,9 @@ const Search = ({ data }) => {
                 <span><button className='btn btn-light mx-1 shadow-none' onClick={searchFood}>SEARCH</button></span>
                 <span><button className='btn btn-light mx-1 shadow-none' onClick={clear}>CLEAR ALL</button></span>
             </div>
-            {searchedName ? <p className='text-center mt-3'>{searchedName.length} results found</p> : null}
+            {searchedName  ? <p className='text-center mt-3'>{searchedName.length} results found</p> : null}
             {searchedName ? <ul className="list-group list-group-flush rounded">
-                {!searchedName.length ? <p>No matches found</p> : searchedName.slice(0, itemNum).map((info, i) => <Description info={info} i={i} key={i} />)}
+                {!searchedName.length ? <p className='text-center'>No matches</p> : searchedName.slice(0, itemNum).map((info, i) => <Description info={info} i={i} key={i} />)}
             </ul> : <p className='text-center mt-3'>Search a food</p>}
             { itemNum <= searchedName.length  && <div className='text-center'>
                 <button className='btn btn-primary text-center mt-3' onClick={loadMore}>Load</button>
